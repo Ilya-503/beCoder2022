@@ -26,10 +26,7 @@ public class StartPageTest extends BaseTest {
         String allText = startPage.getAllPageText();
         int firstPersPronAmount = countPronAmount(FIRST_PERS_PRON, allText);
         int otherPronAmount = countPronAmount(OTHER_PRON, allText);
-        String msg = String.format("\nFirst-person pron. amount: %d\nOther pron. amount: %d\n",
-                firstPersPronAmount, otherPronAmount);
-        assertTrue(firstPersPronAmount > otherPronAmount, msg); // напечат., только если тест упадет
-        System.out.println(msg);  // Если тест упадет -> не будет напечатано
+        assertTrue(firstPersPronAmount > otherPronAmount);
     }
 
     private int countPronAmount(List<String> words, String allTexts) {
